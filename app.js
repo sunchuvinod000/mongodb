@@ -6,11 +6,11 @@ var sc = require("./models/model1")
 var sc2 = require("./models/model2")
 var data1 = require('./MOCK-DatA-1');
 var data2 = require('./MOCk-DATA-2');
-const { join } = require('path');
-const { json } = require('express');
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.set('view engine','hbs');
+const port = process.env.PORT || 8080;
 mongoose.connect("mongodb+srv://sunchu_000:sunchu_000@cluster0.xbvjf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{useNewUrlParser:true,useUnifiedTopology:true,useFindAndModify:false}).then(()=> console.log('connected'))
 app.get('/',(req,res)=>{
     // data1.forEach(element => {
@@ -73,5 +73,5 @@ app.get('/display',async (req,res)=>{
 
 });
 
-const port = process.env.PORT || 8080;
+
 app.listen(port , () => { console.log("server started.....") });
