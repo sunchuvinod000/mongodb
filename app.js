@@ -4,8 +4,7 @@ var path = require('path');
 var app = express();
 var sc = require("./models/model1")
 var sc2 = require("./models/model2")
-var data1 = require('./MOCK-DatA-1');
-var data2 = require('./MOCk-DATA-2');
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
